@@ -1,0 +1,133 @@
+#login {
+  width: 700px;
+  height: 490px;
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.login-left {
+  width: 50%;
+}
+.login-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.login-right {
+  width: 50%;
+  text-align: center;
+  padding: 0 60px 30px 60px;
+  background-color: #fff;
+}
+.login-right button {
+  width: 130px;
+  height: 32px;
+  border-radius: 40px;
+  background-color: #999;
+  color: #fff;
+  border: none;
+  outline: none;
+  margin-top: 8px;
+}
+.login-right form {
+  margin-top: 15px;
+}
+.login-type {
+  margin-bottom: 18px;
+}
+.login-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-item a {
+  text-decoration: none;
+  color: black;
+}
+.login-item-icon {
+  margin-right: 8px;
+  color: blue;
+  font-size: 18px;
+}
+
+.logo {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+}
+.logo-contain {
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+.form-group input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  height: 25px;
+  margin-top: 6px;
+  transition: all linear 0.05s;
+}
+.form-group input:focus {
+  border-bottom-width: 2px;
+  border-bottom-color: #999;
+}
+.form-group label {
+  font-size: 14px;
+  color: #999;
+}
+
+.forgot-password {
+  display: block;
+  text-align: right;
+  font-size: 14px;
+  color: #999;
+  padding-top: 4px;
+}
+.forgot-password a {
+  text-decoration: none;
+  color: #999;
+}
+
+.seperate {
+  display: block;
+  margin-top: 22px;
+  position: relative;
+  margin-bottom: 16px;
+}
+.seperate span {
+  background-color: #fff;
+  position: relative;
+  padding: 0 6px;
+}
+.seperate::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #999;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.register span {
+  margin-right: 6px;
+}
+.register a {
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid blue;
+}
+
+/*# sourceMappingURL=Login.css.map */
