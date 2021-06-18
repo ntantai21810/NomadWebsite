@@ -121,6 +121,10 @@
   transform: translateY(-50%);
 }
 
+.register {
+  font-size: 14px;
+}
+
 .register span {
   margin-right: 6px;
 }
