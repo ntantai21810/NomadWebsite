@@ -2,17 +2,30 @@
   --line-color-gray: #918e8e;
   --blue-color: #3502d2;
   --linear-background-button: linear-gradient(to right, #38ef7d, #11998e);
+  --linear-background-login: linear-gradient(
+    to top,
+    rgba(233, 228, 240, 0.85),
+    rgba(211, 204, 227, 0.85)
+  );
   --text-color: black;
 }
 
 #login {
   width: 450px;
-  height: 490px;
+  height: 500px;
   border-radius: 6px;
   overflow: hidden;
   text-align: center;
-  padding: 0 60px 30px 60px;
-  background-color: rgba(255, 255, 255, 0.78);
+  padding: 14px 60px;
+  background: rgba(211, 204, 227, 0.85); /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    rgba(233, 228, 240, 0.85),
+    rgba(211, 204, 227, 0.85)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: var(
+    --linear-background-login
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .login-image {
@@ -35,12 +48,17 @@
   background: var(
     --linear-background-button
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  transition: all 0.1s linear;
   color: #fff;
   border: none;
   outline: none;
   margin-top: 8px;
 }
+
+.login button:hover {
+  transform: scale(1.02);
+}
+
 .login form {
   margin-top: 15px;
 }
@@ -51,7 +69,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.1s linear;
 }
+
+.login-item:hover {
+  transform: scale(1.02);
+}
+
 .login-item a {
   text-decoration: none;
   color: var(--text-color);
@@ -67,17 +91,16 @@
 }
 
 .logo {
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  /* border-radius: 50%; */
+  width: 100%;
   object-fit: cover;
   object-position: center;
 }
 .logo-contain {
+  width: 120px;
+  margin: 5px auto 0 auto;
   height: 130px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
 }
 
 .form-group {
@@ -112,9 +135,13 @@
   font-size: 14px;
   padding-top: 4px;
 }
+.forgot-password a:hover {
+  color: #505050;
+}
 .forgot-password a {
   text-decoration: none;
   color: var(--text-color);
+  transition: all 0.1s linear;
 }
 
 .seperate {
@@ -156,6 +183,7 @@
 
 .register span {
   margin-right: 6px;
+  transition: all 0.1s linear;
   color: var(--text-color);
 }
 .register a {
@@ -163,4 +191,10 @@
   padding-bottom: 2px;
   border-bottom: 1px solid var(--blue-color);
   color: var(--blue-color);
+  transition: all 0.1s linear;
+}
+
+.register a:hover {
+  color: #5c5cc5;
+  border-bottom-color: #5c5cc5;
 }
