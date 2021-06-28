@@ -4,27 +4,59 @@ import logo from "../../assets/image/logo-2.png";
 import { Link } from "react-router-dom";
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      passowrd: "",
+    };
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  handelSubmit = (e) => {
+    e.preventDefault();
+  };
+
   render() {
     return (
       <div id="login" className="login">
         <Link to="/" className="logo-contain">
           <img className="logo" src={logo} alt="nomad-logo" />
         </Link>
-        <form>
+        <form onSubmit={this.handelSubmit}>
           <div className="form-group">
-            <label htmlFor="email">Email hoặc tên tài khoản :</label>
-            <input type="email" id="email" aria-describedby="emailHelp" />
+            <label htmlFor="email">Email :</label>
+            <input
+              id="email"
+              type="email"
+              value={this.state.email}
+              name="email"
+              onChange={this.handleChange}
+              required
+            />
           </div>
           <div className="form-group">
             <label htmlFor="password">Mật khẩu :</label>
-            <input type="password" id="password" />
+            <input
+              id="password"
+              type="password"
+              value={this.state.passowrd}
+              name="passowrd"
+              onChange={this.handleChange}
+              required
+            />
           </div>
           <div className="form-group">
             <span className="forgot-password">
-              <a href="#">Quên mật khẩu?</a>
+              <Link to="">Quên mật khẩu?</Link>
             </span>
           </div>
-          <button>Đăng nhập</button>
+          <button type="submit">Đăng nhập</button>
         </form>
 
         <span className="seperate">
@@ -33,16 +65,16 @@ class Login extends React.Component {
 
         <ul className="login-type">
           <li className="login-item">
-            <a href="#">
+            <Link to="">
               <i className="fab fa-facebook login-item-icon"></i>
               <span>Đăng nhập với Facebook</span>
-            </a>
+            </Link>
           </li>
         </ul>
 
         <div className="register">
           <span>Chưa có tài khoản?</span>
-          <a href="#">Đăng kí ngay</a>
+          <Link to="">Đăng kí ngay</Link>
         </div>
       </div>
     );

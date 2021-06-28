@@ -3,7 +3,7 @@ import "./Carousel.css";
 
 class Carousel extends React.Component {
   render() {
-    return <div className="carousel">123</div>;
+    return <div className="carousel container-fluid">123</div>;
   }
 }
 
