@@ -31,15 +31,43 @@
 }
 
 .user-avatar {
-  display: inline-block;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
   margin-right: 12px;
   font-size: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-avatar img {
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+  object-position: center;
 }
 
 .user-profile {
   text-decoration: none;
   color: black;
   cursor: pointer;
+  width: 120px;
+}
+
+.user-name {
+  width: 78px;
+  overflow: hidden;
+}
+
+.bell {
+  font-size: 18px;
+  color: #000;
+  transition: all 0.1s linear;
+}
+
+.bell:hover {
+  transform: scale(1.2);
 }
 
 form .form-control {

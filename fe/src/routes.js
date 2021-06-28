@@ -9,6 +9,11 @@ const routes = [
     component: () => <LoginPage />,
   },
   {
+    path: "/register",
+    exact: false,
+    component: ({ match }) => <LoginPage match={match} />,
+  },
+  {
     path: "/",
     exact: true,
     component: () => <MainPage />,

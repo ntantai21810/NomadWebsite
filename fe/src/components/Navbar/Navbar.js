@@ -40,12 +40,7 @@ class Navbar extends React.Component {
                 Search
               </button>
             </form>
-            <Link
-              to="/login"
-              className="d-flex align-items-center user-profile"
-            >
-              {this.showProfile()}
-            </Link>
+            {this.showProfile(0)}
           </div>
         </div>
       </nav>
@@ -53,12 +48,34 @@ class Navbar extends React.Component {
   }
 
   showProfile = (user) => {
-    return [
-      <span className="user-avatar mr-3" key="0">
-        <i className="fas fa-user-circle"></i>
-      </span>,
-      <span key="1">Đăng nhập</span>,
-    ];
+    if (user) {
+      return [
+        <Link key="0" to="" className="d-flex align-items-center user-profile">
+          <span className="user-avatar mr-3" key="0">
+            <img
+              src="https://images.unsplash.com/photo-1624841592352-d1fb436f90bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+              alt="user-avatar"
+            />
+          </span>
+          <span key="1" className="user-name">
+            Tai
+          </span>
+        </Link>,
+        <Link key="1" to="">
+          <i className="far fa-bell bell" key="2"></i>
+        </Link>,
+      ];
+    } else
+      return (
+        <Link to="/login" className="d-flex align-items-center user-profile">
+          <span className="user-avatar mr-3" key="0">
+            <i className="fas fa-user-circle"></i>
+          </span>
+          <span key="1" className="user-name">
+            Đăng nhập
+          </span>
+        </Link>
+      );
   };
 }
 

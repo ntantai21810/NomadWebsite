@@ -6,7 +6,7 @@ class LoginPage extends React.Component {
   render() {
     return (
       <div className="login-page">
-        <Login />
+        <Login match={this.props.match} />
       </div>
     );
   }
