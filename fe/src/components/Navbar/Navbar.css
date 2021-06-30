@@ -26,6 +26,10 @@
   border-radius: 18px;
 }
 
+.nav-item.active:hover {
+  background-color: #13a713;
+}
+
 .nav-item.active .nav-link {
   color: #fff;
 }

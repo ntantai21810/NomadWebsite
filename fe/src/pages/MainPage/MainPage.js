@@ -1,13 +1,13 @@
 import React from "react";
 import "./MainPage.css";
-import Carousel from "../../components/Carousel/Carousel";
+import Search from "../../components/Search/Search";
 import Progress from "../../components/Progress/Progress";
 
 class MainPage extends React.Component {
   render() {
     return (
       <div>
-        <Carousel />
+        <Search />
         <Progress />
       </div>
     );
