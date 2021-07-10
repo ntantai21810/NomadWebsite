@@ -1,48 +1,63 @@
-.favor:hover,.trend:hover,.place:hover,.user:hover,.price:hover,.rating:hover {
-    animation-name: stretch;
-    animation-duration: 0.8s; 
-    animation-timing-function: ease-out; 
-    animation-delay: 0;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-fill-mode: none;
-    animation-play-state: running;
+.favor:hover,
+.trend:hover,
+.place:hover,
+.user:hover,
+.price:hover,
+.rating:hover {
+  animation-name: stretch;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes stretch {
+  from {
+    transform: scale(1);
   }
-  
-  @keyframes stretch {
-    from {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(0.9);
-    }
-    to {
-      transform: scale(0.8);
-    }
+  50% {
+    transform: scale(0.9);
   }
-.a-icon:link,.a-icon:hover,.a-icon:visited,.a-icon:active{
+  to {
+    transform: scale(0.8);
+  }
+}
+.a-icon:link,
+.a-icon:hover,
+.a-icon:visited,
+.a-icon:active {
   text-decoration: none;
   line-height: 25px;
   display: inline-block;
-  color:rgb(194, 189, 189);
+  color: rgb(194, 189, 189);
   margin: 0 10px 0 0;
 }
 
-.text-underline-icon{
+.text-underline-icon {
   font-size: 15px;
-  color:rgb(105, 103, 103);
+  color: rgb(105, 103, 103);
+  margin-top: 8px;
 }
-.col-Browse-Places{
-  color:rgb(73, 72, 72);
+.col-Browse-Places {
+  color: rgb(73, 72, 72);
   text-align: center;
-  font-size: 25px;
+  font-size: 24px;
+  margin-bottom: 32px;
 }
-.row-icon{
-    margin-top: 15px;
-    text-align: center;
-    font-size: 30px;
+.row-icon {
+  margin-top: 15px;
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
 }
-.Browse-Places{
-    line-height: 35px;
-    background-color: rgb(238, 236, 236);
+.Browse-Places {
+  background-color: rgb(238, 236, 236);
+  padding: 32px 0 24px 0;
+}
+
+.a-icon {
+  text-align: center;
 }

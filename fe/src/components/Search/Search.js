@@ -21,7 +21,27 @@ class Search extends React.Component {
                 Go to restaurant
               </a>
             </div>
-            <div className="col-md-4 search-right">123</div>
+            <div className="col-md-4 search-right">
+              <div class="input-container">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control location"
+                    placeholder="Choose your location"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control food-type"
+                    placeholder="Choose food type"
+                  />
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary search-find">
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </div>
