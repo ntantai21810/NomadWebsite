@@ -1,6 +1,7 @@
 import React from "react";
 import "./Search.css";
 import Carousel from "../Carousel/Carousel";
+import { Link } from "react-router-dom";
 
 class Search extends React.Component {
   render() {
@@ -17,28 +18,28 @@ class Search extends React.Component {
                   Specify your address to suggest you the fast delivery
                 </span>
               </div>
-              <a href="" className="btn slogan-btn">
+              <Link to="" className="btn slogan-btn">
                 Go to restaurant
-              </a>
+              </Link>
             </div>
             <div className="col-md-4 search-right">
-              <div class="input-container">
-                <div class="form-group">
+              <div className="input-container">
+                <div className="form-group">
                   <input
                     type="text"
-                    class="form-control location"
+                    className="form-control location"
                     placeholder="Choose your location"
                   />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <input
                     type="text"
-                    class="form-control food-type"
+                    className="form-control food-type"
                     placeholder="Choose food type"
                   />
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary search-find">
+              <button type="submit" className="btn btn-primary search-find">
                 Submit
               </button>
             </div>
