@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import Logo from "../../assets/image/logo-2.png";
+import { Link } from "react-router-dom";
 
 class Footer extends React.Component {
   render() {
@@ -34,8 +35,8 @@ class Footer extends React.Component {
           </div>
         </div>
         <div className="footer-mid">
-          <div className="container">
-            <div className="footer-logo">
+          <div className="container footer-mid-container">
+            <div>
               <img className="footer-img" src={Logo} alt="nomad-logo" />
               <p className="footer-desc">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
@@ -44,45 +45,66 @@ class Footer extends React.Component {
               </p>
             </div>
             <div className="footer-about">
-              <h3>About Nomad</h3>
-              <ul>
-                <li>About us</li>
-                <li>Blog</li>
-                <li>Developers</li>
-                <li>Mobile apps</li>
-                <li>Contact</li>
-              </ul>
+              <h3 className="footer-subtitle">About Nomad</h3>
+              <div>
+                <Link className="footer-link" to="/about">
+                  About us
+                </Link>
+                <Link className="footer-link" to="">
+                  Blog
+                </Link>
+                <Link className="footer-link" to="">
+                  Developers
+                </Link>
+                <Link className="footer-link" to="">
+                  Mobile apps
+                </Link>
+                <Link className="footer-link" to="">
+                  Contact
+                </Link>
+              </div>
             </div>
             <div className="footer-business">
-              <h3>Business</h3>
-              <ul>
-                <li>Add a restaurant</li>
-                <li>Book</li>
-                <li>Advertise</li>
-              </ul>
+              <h3 className="footer-subtitle">Business</h3>
+              <div>
+                <Link className="footer-link" to="">
+                  Add a restaurant
+                </Link>
+                <Link className="footer-link" to="">
+                  Book
+                </Link>
+                <Link className="footer-link" to="">
+                  Advertise
+                </Link>
+              </div>
             </div>
             <div className="footer-partner">
-              <h3>Partner With Us</h3>
-              <ul>
-                <li>For Restaurant</li>
-                <li>For Driver</li>
-              </ul>
-              <ul className="footer-social">
-                <li>
+              <h3 className="footer-subtitle">Partner With Us</h3>
+              <div>
+                <Link className="footer-link" to="">
+                  For Restaurant
+                </Link>
+                <Link className="footer-link" to="">
+                  For Driver
+                </Link>
+              </div>
+              <div className="footer-social">
+                <Link className="footer-icon" to="">
                   <i className="fab fa-facebook"></i>
-                </li>
-                <li>
+                </Link>
+                <Link className="footer-icon" to="">
                   <i className="fab fa-twitter"></i>
-                </li>
-                <li>
+                </Link>
+                <Link className="footer-icon" to="">
                   <i className="fab fa-instagram"></i>
-                </li>
-              </ul>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
         <h3 className="footer-copyright">
-          Copyright 2021 Nomad by Noname. All Rights Reserved
+          <i class="far fa-copyright copyright-icon"></i>Copyright 2021{" "}
+          <Link to="">Nomad</Link> by Noname. All Rights Reserved
         </h3>
       </div>
     );
