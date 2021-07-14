@@ -88,7 +88,7 @@ class About extends React.Component {
                   hàng, quán ăn, cafe, bar, karaoke, tiệm bánh, khu du lịch...
                   tại Việt Nam - từ website hoặc ứng dụng di động. Tất cả thành
                   viên từ Bắc đến Nam, Foody kết nối những thực khách đến với
-                  các địa điểm ăn uống lớn nhỏ cả đất nước.
+                  các địa điểm
                 </p>
               </li>
             </ul>
