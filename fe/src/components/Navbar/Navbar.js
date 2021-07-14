@@ -29,7 +29,7 @@ class Navbar extends React.Component {
               <CustomLink to="/about" exact={false} label="About" />
             </ul>
 
-            <form className="d-flex me-auto">
+            <form className="d-flex me-auto navbar-form">
               <input
                 className="form-control me-2"
                 type="search"

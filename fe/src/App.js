@@ -7,7 +7,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <Route exact path={["/"]} component={Navbar} />
+        <Route exact path={["/", "/about"]} component={Navbar} />
         <Switch>
           {routes.map((route, index) => (
             <Route

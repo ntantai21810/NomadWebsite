@@ -16,9 +16,13 @@
   margin-right: 24px;
 }
 
+.navbar-form {
+  margin-left: 12px;
+}
+
 .nav-item {
   padding: 5px 22px;
-  transition: all linear 0.25s;
+  transition: all linear 0.05s;
 }
 
 .nav-item.active {
@@ -30,7 +34,7 @@
   background-color: #13a713;
 }
 
-.nav-item.active .nav-link {
+.nav-item.active .navbar-link.nav-link {
   color: #fff;
 }
 
