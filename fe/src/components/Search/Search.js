@@ -14,7 +14,7 @@ class Search extends React.Component {
               <div>
                 <h2 className="slogan">Choose, Order and Checkout</h2>
                 <span className="slogan-desc">
-                  Specify your address to suggest you the fast delivery
+                  Sự thoải mái của bạn là niềm vui của chúng tôi
                 </span>
               </div>
               <a href="" className="btn slogan-btn">

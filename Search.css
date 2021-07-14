@@ -1,0 +1,115 @@
+.search {
+  height: 680px;
+  padding: 0;
+  position: relative;
+}
+
+.search-content {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0000007d;
+  z-index: 1;
+}
+
+.row {
+  height: 100%;
+}
+
+.search-left {
+  color: #fff;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 120px 0 80px 0;
+}
+
+.slogan {
+  font-size: 48px;
+  font-weight: bolder;
+  margin-bottom: 40px;
+}
+
+.slogan-desc {
+  font-size: 18px;
+  display: block;
+}
+
+.slogan-btn {
+  color: #fff;
+  background-color: green;
+  padding: 20px;
+  margin-top: 120px;
+  border: none;
+  outline: none;
+}
+
+.slogan-btn:hover {
+  color: #fff;
+  background-color: #13a713;
+}
+
+.slogan-btn:focus {
+  box-shadow: none;
+}
+
+.search-right {
+  height: 100%;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.034);
+  justify-content: space-between;
+  padding: 120px 24px 80px 24px;
+}
+
+.input-container {
+  width: 100%;
+}
+
+.form-group .location,
+.form-group .food-type {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+}
+
+.form-group .location:focus,
+.form-group .food-type:focus {
+  height: 50px;
+  outline: none;
+}
+
+.form-group .location {
+  margin-bottom: 32px;
+}
+
+.form-group .location::placeholder,
+.form-group .food-type::placeholder {
+  font-size: 14px;
+}
+
+.search-find {
+  border: none;
+  margin-top: 80px;
+  outline: none;
+  background-color: green;
+  padding: 14px 40px;
+}
+
+.search-find:hover {
+  background-color: #13a713;
+}
+
+.search-find[type="submit"]:focus {
+  box-shadow: none;
+}
