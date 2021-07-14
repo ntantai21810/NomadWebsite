@@ -1,0 +1,145 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+}
+
+.footer-top {
+  padding: 30px 0;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.footer-top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-input-title {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.footer-form {
+  height: 45px;
+}
+
+.input-group-text {
+  background-color: green;
+  color: #fff;
+  font-size: 14px;
+  height: 100%;
+  cursor: pointer;
+}
+
+.input-group-text:hover {
+  background-color: #13a713;
+}
+
+.select-language {
+  width: 154px;
+  height: 54px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 0 12px;
+}
+
+.languages {
+  appearance: none;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding-left: 38px;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+}
+
+.languages option {
+  color: #000;
+}
+
+.footer-mid {
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.footer-mid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 50px 0;
+  grid-gap: 24px;
+}
+
+.footer-subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+
+.footer-img {
+  width: 80px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer-desc {
+  margin-top: 24px;
+  color: rgb(184, 184, 184);
+  line-height: 1.4;
+}
+
+.footer-link {
+  color: rgb(184, 184, 184);
+  text-decoration: none;
+  display: block;
+}
+
+.footer-link:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.footer-social {
+  display: flex;
+}
+
+.footer-icon {
+  color: rgb(184, 184, 184);
+  margin-top: 24px;
+  font-size: 24px;
+}
+
+.footer-icon:not(:last-child) {
+  margin-right: 24px;
+}
+
+.footer-icon:hover {
+  color: #fff;
+}
+
+.footer-copyright {
+  padding: 30px 0;
+  text-align: center;
+  font-size: 14px;
+  color: rgb(184, 184, 184);
+}
+
+.footer-copyright a {
+  font-weight: bold;
+  color: green;
+  text-decoration: none;
+}
+
+.copyright-icon {
+  margin-right: 8px;
+}

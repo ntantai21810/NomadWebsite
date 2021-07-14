@@ -32,6 +32,7 @@
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
+
   padding: 120px 0 80px 0;
 }
 
@@ -100,7 +101,9 @@
 
 .search-find {
   border: none;
+
   margin-top: 80px;
+
   outline: none;
   background-color: green;
   padding: 14px 40px;

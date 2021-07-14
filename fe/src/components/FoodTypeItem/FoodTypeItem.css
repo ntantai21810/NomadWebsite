@@ -1,0 +1,43 @@
+.foodtype-item {
+  position: relative;
+  height: 200px;
+  cursor: pointer;
+}
+
+.foodtype-item:hover .foodtype-desc {
+  background-color: rgba(0, 0, 0, 0.61);
+}
+
+.foodtype-img {
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.foodtype-desc {
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.452);
+}
+
+.foodtype-type {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.foodtype-quantity {
+  font-size: 12px;
+}
