@@ -103,7 +103,7 @@ class Footer extends React.Component {
           </div>
         </div>
         <h3 className="footer-copyright">
-          <i class="far fa-copyright copyright-icon"></i>Copyright 2021{" "}
+          <i className="far fa-copyright copyright-icon"></i>Copyright 2021{" "}
           <Link to="">Nomad</Link> by Noname. All Rights Reserved
         </h3>
       </div>
