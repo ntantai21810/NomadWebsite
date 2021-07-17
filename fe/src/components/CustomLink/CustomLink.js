@@ -10,7 +10,7 @@ let CustomLink = ({ to, label, exact }) => {
         let liClass = match ? "nav-item active" : "nav-item";
         return (
           <li className={liClass}>
-            <Link to={to} className="nav-link" aria-current="page">
+            <Link to={to} className="nav-link navbar-link" aria-current="page">
               {label}
             </Link>
           </li>

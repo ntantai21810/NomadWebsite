@@ -1,0 +1,21 @@
+.res-container {
+  margin-top: 32px;
+}
+
+.reslist-title {
+  margin-bottom: 18px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.reslist {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  grid-column-gap: 24px;
+}
+
+.next {
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+}

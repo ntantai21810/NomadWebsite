@@ -1,5 +1,5 @@
 .search {
-  height: 450px;
+  height: 680px;
   padding: 0;
   position: relative;
 }
@@ -29,18 +29,17 @@
 
 .search-left {
   color: #fff;
-  display: flex;
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 80px 0;
+
+  padding: 120px 0 80px 0;
 }
 
 .slogan {
   font-size: 48px;
   font-weight: bolder;
-  line-height: 2.4;
+  margin-bottom: 40px;
 }
 
 .slogan-desc {
@@ -52,7 +51,7 @@
   color: #fff;
   background-color: green;
   padding: 20px;
-  margin-top: 18px;
+  margin-top: 120px;
   border: none;
   outline: none;
 }
@@ -63,5 +62,57 @@
 }
 
 .slogan-btn:focus {
+  box-shadow: none;
+}
+
+.search-right {
+  height: 100%;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.034);
+  justify-content: space-between;
+  padding: 120px 24px 80px 24px;
+}
+
+.input-container {
+  width: 100%;
+}
+
+.form-group .location,
+.form-group .food-type {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+}
+
+.form-group .location:focus,
+.form-group .food-type:focus {
+  height: 50px;
+  outline: none;
+}
+
+.form-group .location {
+  margin-bottom: 32px;
+}
+
+.form-group .location::placeholder,
+.form-group .food-type::placeholder {
+  font-size: 14px;
+}
+
+.search-find {
+  border: none;
+
+  margin-top: 80px;
+
+  outline: none;
+  background-color: green;
+  padding: 14px 40px;
+}
+
+.search-find:hover {
+  background-color: #13a713;
+}
+
+.search-find[type="submit"]:focus {
   box-shadow: none;
 }
