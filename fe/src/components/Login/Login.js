@@ -2,7 +2,7 @@ import React from "react";
 import "./Login.css";
 import logo from "../../assets/image/logo-2.png";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -21,7 +21,7 @@ class Login extends React.Component {
 
   handelSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    axios.post("http://localhost:4000/register")
   };
 
   render() {
