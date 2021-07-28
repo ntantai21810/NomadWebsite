@@ -2,6 +2,8 @@ import React from "react";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MainPage from "./pages/MainPage/MainPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
+import RestaurantsPage from "./pages/RestaurantsPage/RestaurantsPage";
+import RestaurantPage from "./pages/RestaurantPage/RestaurantPage";
 
 const routes = [
   {
@@ -18,6 +20,16 @@ const routes = [
     path: "/about",
     exact: false,
     component: () => <AboutPage />,
+  },
+  {
+    path: "/type/:type",
+    exact: false,
+    component: () => <RestaurantsPage />,
+  },
+  {
+    path: "/restaurant/:id",
+    exact: false,
+    component: () => <RestaurantPage />,
   },
   {
     path: "/",

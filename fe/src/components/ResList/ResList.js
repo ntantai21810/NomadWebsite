@@ -7,7 +7,12 @@ class ResList extends React.Component {
   render() {
     return (
       <div className="container res-container">
-        <h3 className="reslist-title">Trending</h3>
+        <div className="reslist-top">
+          <h3 className="reslist-title">Trending</h3>
+          <Link to="/type/trending" className="reslist-link">
+            View all
+          </Link>
+        </div>
         <div className="reslist">
           <ResItem />
           <ResItem />
