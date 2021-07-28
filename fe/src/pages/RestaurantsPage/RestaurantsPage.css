@@ -1,0 +1,19 @@
+.respage-container {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.respage-left {
+  width: 15%;
+  border-right: 1px solid #1e1e1e;
+}
+
+.respage-right {
+  width: 85%;
+  padding-left: 96px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+}

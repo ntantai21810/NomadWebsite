@@ -2,15 +2,26 @@
   margin-top: 32px;
 }
 
+.reslist-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: calc(50px + 24px);
+}
+
 .reslist-title {
   margin-bottom: 18px;
   font-size: 24px;
   font-weight: bold;
 }
 
+.reslist-link {
+  text-decoration: none;
+}
+
 .reslist {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr 50px;
   grid-column-gap: 24px;
 }
 

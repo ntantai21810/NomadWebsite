@@ -1,19 +1,21 @@
 import React from "react";
 import Search from "../../components/Search/Search";
 import Progress from "../../components/Progress/Progress";
-import ResContainer from "../../containers/ResContainer/ResContainer";
+import ResListContainer from "../../containers/ResListContainer/ResListContainer";
 import FoodTypeContainer from "../../containers/FoodTyepContainer/FoodTypeContainer";
-import Footer from "../../components/Footer/Footer";
 
 class MainPage extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <div>
         <Search />
         <Progress />
-        <ResContainer />
+        <ResListContainer />
         <FoodTypeContainer />
-        <Footer />
       </div>
     );
   }

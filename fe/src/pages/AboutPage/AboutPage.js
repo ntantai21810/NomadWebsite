@@ -1,13 +1,15 @@
 import React from "react";
 import About from "../../components/About/About";
-import Footer from "../../components/Footer/Footer";
 
 class AboutPage extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <div>
         <About />
-        <Footer />
       </div>
     );
   }

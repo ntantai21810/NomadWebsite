@@ -25,8 +25,9 @@ class Navbar extends React.Component {
           </button>
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav mb-2 mb-lg-0">
-              <CustomLink to="/" exact={true} label="Home" />
+              <CustomLink to="/" exact={true} label="Home" extra="1" />
               <CustomLink to="/about" exact={false} label="About" />
+              <CustomLink to="/type/all" exact={false} label="Type" />
             </ul>
 
             <form className="d-flex me-auto navbar-form">

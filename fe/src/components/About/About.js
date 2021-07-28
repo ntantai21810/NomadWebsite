@@ -1,27 +1,21 @@
 import React from "react";
 import "./About.css";
-import { Link } from "react-router-dom";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 class About extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sidebarItems: ["Gioi thieu", "Nha dau tu", "Gop y", "Lien he"],
+    };
+  }
+
   render() {
     return (
       <div className="about">
         <div className="container about-container">
           <div className="about-left">
-            <div className="about-list">
-              <Link to="/about" className="about-link">
-                Gioi thieu
-              </Link>
-              <Link to="" className="about-link">
-                Nha dau tu
-              </Link>
-              <Link to="" className="about-link">
-                Gop y
-              </Link>
-              <Link to="" className="about-link">
-                Lien he
-              </Link>
-            </div>
+            <Sidebar items={this.state.sidebarItems} />
           </div>
           <div className="about-right">
             <h2 className="about-title">About us</h2>
