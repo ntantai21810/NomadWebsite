@@ -3,6 +3,7 @@ import "./Navbar.css";
 import Logo from "../../assets/image/logo-2.png";
 import CustomLink from "../../components/CustomLink/CustomLink";
 import { Link } from "react-router-dom";
+import * as Types from "../../constants/index";
 
 class Navbar extends React.Component {
   render() {
@@ -27,7 +28,7 @@ class Navbar extends React.Component {
             <ul className="navbar-nav mb-2 mb-lg-0">
               <CustomLink to="/" exact={true} label="Home" extra="1" />
               <CustomLink to="/about" exact={false} label="About" />
-              <CustomLink to="/type/all" exact={false} label="Type" />
+              <CustomLink to={[...Types.TYPE_URL]} exact={false} label="Type" />
             </ul>
 
             <form className="d-flex me-auto navbar-form">
