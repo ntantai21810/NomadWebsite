@@ -1,0 +1,10 @@
+Để chạy be cần
+ - cd be
+ - npm install
+ - npm install nodemon(nếu chưa có nodemon)
+ - nodemon index.js
+
+Để truy cập vào database:
+ - Truy cập vào website mongoose
+ - Tài khoản: lethanhngoc123a@gmail.com
+ - MK: lethanhngoc123a
