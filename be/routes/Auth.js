@@ -5,7 +5,7 @@ const argon2 = require('argon2')
 const jwt = require('jsonwebtoken')
 const route = express.Router()
 
-const User = require('../models/signUp')
+const User = require('../models/User')
 
 route.post('/register', async (req, res) => {
     const {email, password, repassword} = req.body; 

@@ -1,7 +1,8 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const dotenv = require("dotenv")
-const routeSignUp = require('./routes/signUp')
+const routeAuth = require('./routes/Auth')
+const postRoute = require('./routes/Post')
 const cors = require('cors')
 dotenv.config()
 
@@ -20,9 +21,9 @@ mongoose.connect(
 )
 
 app.use(express.json());
-app.use(cors())
-app.use('/', routeSignUp);
-
+app.use(cors());
+app.use("/api/auth", routeAuth);
+app.use("/api/posts", postRoute);
 
 app.listen(4000, (req, res)=>{
     console.log("Server is running")
