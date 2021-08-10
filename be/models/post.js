@@ -34,8 +34,8 @@ const PostSchema = new Schema({
         default: null,
     },
     likes:{
-        type: Array,
-        default: [],
+        type: Number,
+        default: 0,
     }, 
     comment:{
         type: Array,
