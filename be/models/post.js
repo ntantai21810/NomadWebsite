@@ -26,16 +26,16 @@ const PostSchema = new Schema({
         default: "",
     },
     descriptionFood:{
-        type: Number,
-        default: null, 
+        type: String,
+        default: "", 
     },
     price:{
         type: Number,
         default: null,
     },
     likes:{
-        type: Array,
-        default: [],
+        type: Number,
+        default: 0,
     }, 
     comment:{
         type: Array,
