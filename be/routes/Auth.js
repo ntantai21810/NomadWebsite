@@ -37,7 +37,7 @@ route.post('/register', async (req, res) => {
             return res.status(400).json({success: false, message : 'Password is not equal RePassword'});
         }
         const hashedPassword = await argon2.hash(password);
-        const newUser=new User({email, password: hashedPassword, avatar:"https://picsum.photos/40/40", username: generateName()});
+        const newUser=new User({email, password: hashedPassword, avatar:"https://picsum.photos/50/50", username: generateName()});
         await newUser.save();
 
         // Return token
