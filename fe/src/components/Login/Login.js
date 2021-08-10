@@ -2,13 +2,13 @@ import React from "react";
 import "./Login.css";
 import logo from "../../assets/image/logo-2.png";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import callAPI from "../../utils/apiCall";
 class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
-      passowrd: "",
+      password: "",
       re_passowrd: "",
     };
   }
@@ -21,7 +21,19 @@ class Login extends React.Component {
 
   handelSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:4000/register")
+    let { match } = this.props;
+    let { email, password } = this.state;
+    let re_password = this.state.re_passowrd;
+    let endpoint = match ? "register" : "login";
+    let data = match
+      ? { email, password, repassword: re_password }
+      : { email, password };
+
+    console.log(data);
+
+    callAPI(endpoint, "POST", data)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err.response.data));
   };
 
   render() {
@@ -48,8 +60,8 @@ class Login extends React.Component {
             <input
               id="password"
               type="password"
-              value={this.state.passowrd}
-              name="passowrd"
+              value={this.state.password}
+              name="password"
               onChange={this.handleChange}
               required
             />

@@ -28,7 +28,11 @@ class Navbar extends React.Component {
             <ul className="navbar-nav mb-2 mb-lg-0">
               <CustomLink to="/" exact={true} label="Home" extra="1" />
               <CustomLink to="/about" exact={false} label="About" />
-              <CustomLink to={[...Types.TYPE_URL]} exact={false} label="Type" />
+              <CustomLink
+                to={[...Types.TYPE_URL]}
+                exact={false}
+                label="Restaurants"
+              />
             </ul>
 
             <form className="d-flex me-auto navbar-form">
