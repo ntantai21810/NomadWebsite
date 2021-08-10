@@ -26,8 +26,8 @@ const PostSchema = new Schema({
         default: "",
     },
     descriptionFood:{
-        type: Number,
-        default: null, 
+        type: String,
+        default: "", 
     },
     price:{
         type: Number,
