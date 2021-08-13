@@ -64,4 +64,14 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+//get all post
+router.post("/list", function(req, res){
+    Post.find({}, function(err, posts){
+        if(err){
+            res.status(500).json("Something went really wrong!");
+            next();
+        }
+        res.status(200).json(posts);
+    });
+})
 module.exports = router;
