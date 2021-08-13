@@ -46,7 +46,7 @@ class Navbar extends React.Component {
                 Search
               </button>
             </form>
-            {this.showProfile(0)}
+            {this.showProfile(1)}
           </div>
         </div>
       </nav>

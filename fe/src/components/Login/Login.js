@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.css";
 import logo from "../../assets/image/logo-2.png";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import callAPI from "../../utils/apiCall";
 class Login extends React.Component {
   constructor(props) {
@@ -10,12 +10,15 @@ class Login extends React.Component {
       email: "",
       password: "",
       re_passowrd: "",
+      message: "",
+      success: false,
     };
   }
 
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+      message: "",
     });
   };
 
@@ -24,19 +27,28 @@ class Login extends React.Component {
     let { match } = this.props;
     let { email, password } = this.state;
     let re_password = this.state.re_passowrd;
-    let endpoint = match ? "register" : "login";
+    let endpoint = match ? "auth/register" : "auth/login";
     let data = match
       ? { email, password, repassword: re_password }
       : { email, password };
 
-    console.log(data);
-
     callAPI(endpoint, "POST", data)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err.response.data));
+      .then((res) => {
+        console.log(res);
+        this.setState({
+          success: true,
+        });
+      })
+      .catch((err) =>
+        this.setState({
+          message: err.response.data.message,
+        })
+      );
   };
 
   render() {
+    if (this.state.success) return <Redirect to="/" />;
+
     let { match } = this.props;
     return (
       <div id="login" className="login">
@@ -55,6 +67,7 @@ class Login extends React.Component {
               required
             />
           </div>
+
           <div className="form-group">
             <label htmlFor="password">Mật khẩu :</label>
             <input
@@ -78,6 +91,11 @@ class Login extends React.Component {
                 required
               />
             </div>
+          ) : (
+            ""
+          )}
+          {this.state.message ? (
+            <span className="auth-message">{this.state.message}</span>
           ) : (
             ""
           )}
