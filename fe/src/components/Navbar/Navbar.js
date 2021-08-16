@@ -4,6 +4,7 @@ import Logo from "../../assets/image/logo-2.png";
 import CustomLink from "../../components/CustomLink/CustomLink";
 import { Link } from "react-router-dom";
 import * as Types from "../../constants/index";
+import { connect } from "react-redux";
 
 class Navbar extends React.Component {
   render() {
@@ -46,7 +47,7 @@ class Navbar extends React.Component {
                 Search
               </button>
             </form>
-            {this.showProfile(1)}
+            {this.showProfile(this.props.user)}
           </div>
         </div>
       </nav>
@@ -54,17 +55,14 @@ class Navbar extends React.Component {
   }
 
   showProfile = (user) => {
-    if (user) {
+    if (Object.keys(user).length) {
       return [
         <Link key="0" to="" className="d-flex align-items-center user-profile">
           <span className="user-avatar mr-3" key="0">
-            <img
-              src="https://images.unsplash.com/photo-1624841592352-d1fb436f90bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
-              alt="user-avatar"
-            />
+            <img src={user.avatar} alt="user-avatar" />
           </span>
           <span key="1" className="user-name">
-            Tai
+            {user.username}
           </span>
         </Link>,
         <Link key="1" to="">
@@ -85,4 +83,10 @@ class Navbar extends React.Component {
   };
 }
 
-export default Navbar;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  };
+};
+
+export default connect(mapStateToProps, null)(Navbar);

@@ -17,6 +17,8 @@ export const getAllRes = (allRes) => {
 
 export const getAllResRequest = () => {
   return (dispatch) => {
-    callAPI();
+    callAPI("posts/list", "POST")
+      .then((res) => dispatch(getAllRes(res.data)))
+      .catch((err) => console.log(err));
   };
 };

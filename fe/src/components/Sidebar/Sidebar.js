@@ -10,7 +10,7 @@ class Sidebar extends React.Component {
         {items.map((item, index) => (
           <li key={index}>
             <Link to="" className="sidebar-link">
-              Trending
+              {item}
             </Link>
           </li>
         ))}

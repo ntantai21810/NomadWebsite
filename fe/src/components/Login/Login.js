@@ -3,6 +3,9 @@ import "./Login.css";
 import logo from "../../assets/image/logo-2.png";
 import { Link, Redirect } from "react-router-dom";
 import callAPI from "../../utils/apiCall";
+import * as Actions from "../../actions/index";
+import { connect } from "react-redux";
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +37,14 @@ class Login extends React.Component {
 
     callAPI(endpoint, "POST", data)
       .then((res) => {
-        console.log(res);
+        let user = {
+          username: res.data.username,
+          avatar: res.data.avatar,
+          email: res.data.email,
+        };
+
+        this.props.setUser(user);
+
         this.setState({
           success: true,
         });
@@ -50,6 +60,7 @@ class Login extends React.Component {
     if (this.state.success) return <Redirect to="/" />;
 
     let { match } = this.props;
+
     return (
       <div id="login" className="login">
         <Link to="/" className="logo-contain">
@@ -95,7 +106,7 @@ class Login extends React.Component {
             ""
           )}
           {this.state.message ? (
-            <span className="auth-message">{this.state.message}</span>
+            <div className="auth-message">{this.state.message}</div>
           ) : (
             ""
           )}
@@ -139,4 +150,12 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setUser: (user) => {
+      dispatch(Actions.setUser(user));
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Login);

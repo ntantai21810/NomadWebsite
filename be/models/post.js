@@ -30,8 +30,8 @@ const PostSchema = new Schema({
     default: "",
   },
   price: {
-    type: Number,
-    default: null,
+    type: Array,
+    default: [],
   },
   likes: {
     type: Number,
@@ -60,6 +60,20 @@ const PostSchema = new Schema({
   createAt: {
     type: Date,
     default: Date.now,
+  },
+  member: {
+    type: Number,
+    default: 0,
+  },
+  views: {
+    type: Number,
+    default: 0,
+  },
+  rating: {
+    type: Number,
+    min: 0,
+    max: 5,
+    default: 0,
   },
 });
 

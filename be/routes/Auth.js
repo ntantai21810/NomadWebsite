@@ -1408,7 +1408,7 @@ route.post("/register", async (req, res) => {
       process.env.ACCESS_TOKEN_SECRET
     );
 
-    res.json({ success: true, message: "User created successfully" });
+    res.json({ success: true, message: "User created successfully", newUser });
   } catch (error) {
     console.log(error);
     res.status(500).json({ success: false, message: "Error" });
