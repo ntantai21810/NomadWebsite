@@ -11,6 +11,7 @@ router.post("/", async (req, res) => {
 });
 
 //update a post
+<<<<<<< HEAD
 router.put("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
@@ -19,6 +20,16 @@ router.put("/:id", async (req, res) => {
       res.status(200).json("the post has been updated");
     } else {
       res.status(403).json("You can update only your post");
+=======
+router.put("/:id", async(req, res)=>{
+    try{
+        comments = req.body.comment
+        const post = await Post.findById(req.params.id);
+        await post.updateOne({$push: {comment: comments}});
+        res.status(200).json("the post has been updated");
+    }catch(err){
+        res.status(500).json(err);
+>>>>>>> 4d0a39be7a0bbe345966035bd10dd600f6d76285
     }
   } catch (err) {
     res.status(500).json(err);
