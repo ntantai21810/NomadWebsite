@@ -29,7 +29,7 @@ const routes = [
   {
     path: "/restaurant/:id",
     exact: false,
-    component: () => <RestaurantPage />,
+    component: ({ match }) => <RestaurantPage match={match} />,
   },
   {
     path: "/",

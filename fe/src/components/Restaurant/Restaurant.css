@@ -68,6 +68,7 @@
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 12px;
+  text-transform: uppercase;
 }
 
 .restaurant-desc-location {
@@ -148,4 +149,9 @@
 
 .comment-box {
   width: 60%;
+}
+
+.open-time {
+  display: inline-block;
+  margin-left: 4px;
 }

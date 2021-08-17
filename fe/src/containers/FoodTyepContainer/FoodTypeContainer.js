@@ -8,9 +8,9 @@ class FoodTypeContainer extends React.Component {
     let { foodType } = this.props;
     return (
       <div className="foodtype-container">
-        <h2 className="foodtype-title">Explore Your Favorite Recipes</h2>
+        <h2 className="foodtype-title">Khám phá theo món ăn</h2>
         <FoodType foodType={foodType} />
-        <button className="btn foodtype-btn">Show all</button>
+        <button className="btn foodtype-btn">Hiển thị tất cả</button>
       </div>
     );
   }

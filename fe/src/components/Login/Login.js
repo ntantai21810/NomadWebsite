@@ -1,31 +1,66 @@
 import React from "react";
 import "./Login.css";
 import logo from "../../assets/image/logo-2.png";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import { Link, Redirect } from "react-router-dom";
+import callAPI from "../../utils/apiCall";
+import * as Actions from "../../actions/index";
+import { connect } from "react-redux";
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
-      passowrd: "",
+      password: "",
       re_passowrd: "",
+      message: "",
+      success: false,
     };
   }
 
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+      message: "",
     });
   };
 
   handelSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:4000/register")
+    let { match } = this.props;
+    let { email, password } = this.state;
+    let re_password = this.state.re_passowrd;
+    let endpoint = match ? "auth/register" : "auth/login";
+    let data = match
+      ? { email, password, repassword: re_password }
+      : { email, password };
+
+    callAPI(endpoint, "POST", data)
+      .then((res) => {
+        let user = {
+          username: res.data.username,
+          avatar: res.data.avatar,
+          email: res.data.email,
+        };
+
+        this.props.setUser(user);
+
+        this.setState({
+          success: true,
+        });
+      })
+      .catch((err) =>
+        this.setState({
+          message: err.response.data.message,
+        })
+      );
   };
 
   render() {
+    if (this.state.success) return <Redirect to="/" />;
+
     let { match } = this.props;
+
     return (
       <div id="login" className="login">
         <Link to="/" className="logo-contain">
@@ -43,13 +78,14 @@ class Login extends React.Component {
               required
             />
           </div>
+
           <div className="form-group">
             <label htmlFor="password">Mật khẩu :</label>
             <input
               id="password"
               type="password"
-              value={this.state.passowrd}
-              name="passowrd"
+              value={this.state.password}
+              name="password"
               onChange={this.handleChange}
               required
             />
@@ -69,6 +105,11 @@ class Login extends React.Component {
           ) : (
             ""
           )}
+          {this.state.message ? (
+            <div className="auth-message">{this.state.message}</div>
+          ) : (
+            ""
+          )}
           {match ? (
             ""
           ) : (
@@ -82,7 +123,10 @@ class Login extends React.Component {
         </form>
 
         {match ? (
-          ""
+          <div className="register" style={{ marginTop: "24px" }}>
+            <span>Đã có tài khoản?</span>
+            <Link to="/login">Đăng nhập ngay</Link>
+          </div>
         ) : (
           <div>
             <span className="seperate">
@@ -109,4 +153,12 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setUser: (user) => {
+      dispatch(Actions.setUser(user));
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Login);

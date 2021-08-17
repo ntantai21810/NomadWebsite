@@ -31,12 +31,23 @@
   border-radius: 4px;
 }
 
+.comment-container {
+  flex-grow: 1;
+  margin: 0 24px;
+}
+
 .type-box {
+  width: 100%;
   padding: 8px 12px;
-  width: 70%;
   border-radius: 4px;
   outline: none;
   border: 1px solid rgb(194, 194, 194);
+}
+
+.star-box {
+  margin-top: 12px;
+  margin-right: 8px;
+  width: 40px;
 }
 
 .type-box:focus {

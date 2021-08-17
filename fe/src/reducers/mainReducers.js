@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
-import trendingRes from "./trendingRes";
+import allRes from "./allRes";
 import foodType from "./foodType";
+import user from "./user";
 
 let reducers = combineReducers({
-  trendingRes,
+  allRes,
   foodType,
+  user,
 });
 
 export default reducers;

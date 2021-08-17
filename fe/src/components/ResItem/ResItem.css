@@ -1,0 +1,38 @@
+.card-img-top {
+  height: 250px;
+  object-fit: contain;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 12px;
+  text-transform: uppercase;
+}
+
+.card-text {
+  height: 60px;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  color: #9c9c9c;
+  line-height: 1.2;
+}
+
+a.btn.btn-primary.res-view {
+  background-color: green;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+a.btn.btn-primary.res-view:hover {
+  background-color: #13a713;
+}
+
+.resitem-location {
+  margin: 8px 0;
+  font-size: 14px;
+}

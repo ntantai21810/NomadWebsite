@@ -4,6 +4,7 @@ import Logo from "../../assets/image/logo-2.png";
 import CustomLink from "../../components/CustomLink/CustomLink";
 import { Link } from "react-router-dom";
 import * as Types from "../../constants/index";
+import { connect } from "react-redux";
 
 class Navbar extends React.Component {
   render() {
@@ -26,23 +27,27 @@ class Navbar extends React.Component {
           </button>
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav mb-2 mb-lg-0">
-              <CustomLink to="/" exact={true} label="Home" extra="1" />
-              <CustomLink to="/about" exact={false} label="About" />
-              <CustomLink to={[...Types.TYPE_URL]} exact={false} label="Type" />
+              <CustomLink to="/" exact={true} label="Trang chủ" extra="1" />
+              <CustomLink to="/about" exact={false} label="Giới thiệu" />
+              <CustomLink
+                to={[...Types.TYPE_URL]}
+                exact={false}
+                label="Quán ăn"
+              />
             </ul>
 
             <form className="d-flex me-auto navbar-form">
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Tìm kiếm"
                 aria-label="Search"
               />
               <button className="btn btn-outline-success" type="submit">
-                Search
+                Tìm kiếm
               </button>
             </form>
-            {this.showProfile(0)}
+            {this.showProfile(this.props.user)}
           </div>
         </div>
       </nav>
@@ -50,17 +55,14 @@ class Navbar extends React.Component {
   }
 
   showProfile = (user) => {
-    if (user) {
+    if (Object.keys(user).length) {
       return [
         <Link key="0" to="" className="d-flex align-items-center user-profile">
           <span className="user-avatar mr-3" key="0">
-            <img
-              src="https://images.unsplash.com/photo-1624841592352-d1fb436f90bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
-              alt="user-avatar"
-            />
+            <img src={user.avatar} alt="user-avatar" />
           </span>
           <span key="1" className="user-name">
-            Tai
+            {user.username}
           </span>
         </Link>,
         <Link key="1" to="">
@@ -81,4 +83,10 @@ class Navbar extends React.Component {
   };
 }
 
-export default Navbar;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  };
+};
+
+export default connect(mapStateToProps, null)(Navbar);

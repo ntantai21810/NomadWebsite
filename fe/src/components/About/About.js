@@ -18,71 +18,56 @@ class About extends React.Component {
             <Sidebar items={this.state.sidebarItems} />
           </div>
           <div className="about-right">
-            <h2 className="about-title">About us</h2>
+            <h2 className="about-title">Về chúng tôi</h2>
             <ul className="about-desc-list">
               <li className="about-desc-item">
-                <h3>Foody.vn la gi?</h3>
+                <h3>Nomad la gi?</h3>
                 <p>
-                  Giới thiệu Trợ giúp Nhà đầu tư Góp ý Liên hệ Giới thiệu về
-                  Foody.vn Foody.vn là gì? Được xây dựng từ giữa năm 2012 tại
-                  TP. HCM, Việt Nam, Foody là cộng đồng tin cậy cho mọi người có
-                  thể tìm kiếm, đánh giá, bình luận các địa điểm ăn uống: nhà
-                  hàng, quán ăn, cafe, bar, karaoke, tiệm bánh, khu du lịch...
-                  tại Việt Nam - từ website hoặc ứng dụng di động. Tất cả thành
-                  viên từ Bắc đến Nam, Foody kết nối những thực khách đến với
-                  các địa điểm ăn uống lớn nhỏ cả đất nước.
+                  Nomad giúp bạn dễ dàng hơn trong việc tìm kiếm quán ăn, chúp
+                  tôi sẽ giúp bạn tìm kiếm các quán ăn dựa trên tiêu chí của
+                  bạn: địa điểm, giá, loại món ăn,... và sẽ hiện thị các đánh
+                  giá về quán ăn đó để bạn có thể dễ dàng nhận xét. Bên cạnh đó
+                  bạn cũng có thể tiến hành đánh giá và viết các bình luận cho
+                  quán ăn để người khác có thể xem.
                 </p>
               </li>
               <li className="about-desc-item">
-                <h3>Foody.vn la gi?</h3>
+                <h3>Tìm kiếm dễ dàng</h3>
                 <p>
-                  Giới thiệu Trợ giúp Nhà đầu tư Góp ý Liên hệ Giới thiệu về
-                  Foody.vn Foody.vn là gì? Được xây dựng từ giữa năm 2012 tại
-                  TP. HCM, Việt Nam, Foody là cộng đồng tin cậy cho mọi người có
-                  thể tìm kiếm, đánh giá, bình luận các địa điểm ăn uống: nhà
-                  hàng, quán ăn, cafe, bar, karaoke, tiệm bánh, khu du lịch...
-                  tại Việt Nam - từ website hoặc ứng dụng di động. Tất cả thành
-                  viên từ Bắc đến Nam, Foody kết nối những thực khách đến với
-                  các địa điểm ăn uống lớn nhỏ cả đất nước.
+                  Công cụ tìm kiếm thông minh bằng cách gõ: tên địa điểm, hoặc
+                  địa chỉ, hoặc tên đường, hoặc tên món ăn, hoặc mục đích, hoặc
+                  tên khu vực. Hệ thống tìm kiếm sử dụng gợi ý & xem nhanh thông
+                  tin, giúp bạn tìm địa điểm nhanh nhất
                 </p>
               </li>
               <li className="about-desc-item">
-                <h3>Foody.vn la gi?</h3>
+                <h3>Phân loại rõ ràng</h3>
                 <p>
-                  Giới thiệu Trợ giúp Nhà đầu tư Góp ý Liên hệ Giới thiệu về
-                  Foody.vn Foody.vn là gì? Được xây dựng từ giữa năm 2012 tại
-                  TP. HCM, Việt Nam, Foody là cộng đồng tin cậy cho mọi người có
-                  thể tìm kiếm, đánh giá, bình luận các địa điểm ăn uống: nhà
-                  hàng, quán ăn, cafe, bar, karaoke, tiệm bánh, khu du lịch...
-                  tại Việt Nam - từ website hoặc ứng dụng di động. Tất cả thành
-                  viên từ Bắc đến Nam, Foody kết nối những thực khách đến với
-                  các địa điểm ăn uống lớn nhỏ cả đất nước.
+                  Nomad phân loại các địa điểm ra rất chi tiết: theo mục đích,
+                  loại hình, món ăn, giá cả, loại ẩm thực... Điều này giúp cộng
+                  đồng lọc địa điểm theo mục đích của mình rất nhanh chóng.
                 </p>
               </li>
               <li className="about-desc-item">
-                <h3>Foody.vn la gi?</h3>
+                <h3>Bình luận & Đánh giá</h3>
                 <p>
-                  Giới thiệu Trợ giúp Nhà đầu tư Góp ý Liên hệ Giới thiệu về
-                  Foody.vn Foody.vn là gì? Được xây dựng từ giữa năm 2012 tại
-                  TP. HCM, Việt Nam, Foody là cộng đồng tin cậy cho mọi người có
-                  thể tìm kiếm, đánh giá, bình luận các địa điểm ăn uống: nhà
-                  hàng, quán ăn, cafe, bar, karaoke, tiệm bánh, khu du lịch...
-                  tại Việt Nam - từ website hoặc ứng dụng di động. Tất cả thành
-                  viên từ Bắc đến Nam, Foody kết nối những thực khách đến với
-                  các địa điểm ăn uống lớn nhỏ cả đất nước.
+                  Nomad cho phép thành viên bình luận, đánh giá địa điểm với 5
+                  tiêu chí: Món ăn, Vị trí, Không gian, Giá cả và Dịch vụ, điều
+                  này giúp cộng đồng có cái nhìn tổng quan về các tiêu chí của
+                  mỗi địa điểm. Do đặc thù của mỗi địa điểm khác nhau, ví dụ
+                  Quán cafe, cộng đồng sẽ quan tâm đến Không gian, đối với Quán
+                  Ăn thì cộng đồng quan tâm đến chất lượng món... Đây chính là
+                  điểm khác biệt của Nomad so với cách dịch vụ khác.
                 </p>
               </li>
               <li className="about-desc-item">
-                <h3>Foody.vn la gi?</h3>
+                <h3>Tính năng nổi bật</h3>
                 <p>
-                  Giới thiệu Trợ giúp Nhà đầu tư Góp ý Liên hệ Giới thiệu về
-                  Foody.vn Foody.vn là gì? Được xây dựng từ giữa năm 2012 tại
-                  TP. HCM, Việt Nam, Foody là cộng đồng tin cậy cho mọi người có
-                  thể tìm kiếm, đánh giá, bình luận các địa điểm ăn uống: nhà
-                  hàng, quán ăn, cafe, bar, karaoke, tiệm bánh, khu du lịch...
-                  tại Việt Nam - từ website hoặc ứng dụng di động. Tất cả thành
-                  viên từ Bắc đến Nam, Foody kết nối những thực khách đến với
-                  các địa điểm
+                  Nomad có hệ thông phân loại quăn ăn đa dạng dựa trên nhiều
+                  tiêu chí. Bên cạnh đó có tổng hợp top các quán theo tuần của
+                  từng tiêu chí: quán ăn đang nổi, quăn ăn có nhiều đánh giá tốt
+                  nhất, quán ăn có nhiều lượt xem nhất, ... từ đó bạn có thể lựa
+                  chọn món ăn một cách dễ dàng
                 </p>
               </li>
             </ul>

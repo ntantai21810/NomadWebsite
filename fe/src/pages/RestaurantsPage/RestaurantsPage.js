@@ -1,13 +1,20 @@
 import React from "react";
 import "./RestaurantsPage.css";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import ResItem from "../../components/ResItem/ResItem";
+// import ResItem from "../../components/ResItem/ResItem";
+import { connect } from "react-redux";
 
 class RestaurantsPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sidebarItems: ["Trending", "Trending", "Trending", "Trending"],
+      sidebarItems: [
+        "Tất cả",
+        "Đang hot",
+        "Gần bạn",
+        "Đang giảm giá",
+        "Nhà hàng mới",
+      ],
     };
   }
 
@@ -21,19 +28,16 @@ class RestaurantsPage extends React.Component {
         <div className="respage-left">
           <Sidebar items={this.state.sidebarItems} />
         </div>
-        <div className="respage-right">
-          <ResItem />
-          <ResItem />
-          <ResItem />
-          <ResItem />
-          <ResItem />
-          <ResItem />
-          <ResItem />
-          <ResItem />
-        </div>
+        <div className="respage-right">Coming soon</div>
       </div>
     );
   }
 }
 
-export default RestaurantsPage;
+const mapStateToProps = (state) => {
+  return {
+    allRes: state.allRes,
+  };
+};
+
+export default connect(mapStateToProps, null)(RestaurantsPage);

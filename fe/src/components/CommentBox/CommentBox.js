@@ -1,96 +1,138 @@
 import React from "react";
 import "./CommentBox.css";
+import callAPI from "../../utils/apiCall";
+import { connect } from "react-redux";
+import * as Actions from "../../actions/index";
 
 class CommentBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      comment: "",
+      star: "",
+    };
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
   showRating = (rating) => {
     let result = [];
     let i;
     for (i = 1; i <= rating; i++) {
-      result.push(<i className="fas fa-star comment-star" key={i}></i>);
+      result.push(
+        <i className="fas fa-star comment-star" key={Math.random()}></i>
+      );
     }
     if (i - rating !== 1) {
       result.push(
-        <i className="fas fa-star-half-alt comment-star" key={0}></i>
+        <i
+          className="fas fa-star-half-alt comment-star"
+          key={Math.random()}
+        ></i>
       );
     }
     for (i = 4; i >= rating; i--) {
-      result.push(<i className="far fa-star comment-star" key={i}></i>);
+      result.push(
+        <i className="far fa-star comment-star" key={Math.random()}></i>
+      );
     }
-    return <div className="restaurant-desc-right">{result}</div>;
+    return (
+      <div className="restaurant-desc-right" key={Math.random()}>
+        {result}
+      </div>
+    );
+  };
+
+  submitComment = () => {
+    let user = this.props.user;
+    let { comment, star } = this.state;
+
+    if (Object.keys(user).length === 0 || comment === "" || star === "") return;
+
+    callAPI(`posts/${this.props.res._id}`, "PUT", {
+      avatar: user.avatar,
+      username: user.username,
+      rating: Number(star),
+      comment: comment,
+    }).then((res) => {
+      this.props.addComment(this.props.res._id, {
+        avatar: user.avatar,
+        username: user.username,
+        rating: Number(star),
+        comment: comment,
+      });
+      this.setState({
+        comment: "",
+        star: "",
+      });
+    });
   };
 
   render() {
+    let { user, res } = this.props;
+
     return (
       <div className="comment-box">
         <div className="comment-box-title-container">
-          <h3 className="comment-box-title">15 Comments</h3>
+          <h3 className="comment-box-title">{res.comment.length} Bình luận</h3>
         </div>
         <div className="your-comment">
           <img
             className="comment-avatar"
-            src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"
+            src={
+              Object.keys(user).length !== 0
+                ? user.avatar
+                : "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"
+            }
             alt="user-avatar"
           />
-          <input
-            className="type-box"
-            type="text"
-            placeholder="Write your comment"
-          />
-          <button className="post-comment-btn">Post comment</button>
+          <div className="comment-container">
+            <input
+              className="type-box"
+              type="text"
+              placeholder="Viết đánh giá của bạn"
+              value={this.state.comment}
+              name="comment"
+              onChange={this.handleChange}
+            />
+            <input
+              className="star-box"
+              type="number"
+              min="0"
+              max="5"
+              value={this.state.star}
+              name="star"
+              onChange={this.handleChange}
+            />
+            <i className="fas fa-star comment-star"></i>
+          </div>
+
+          <button className="post-comment-btn" onClick={this.submitComment}>
+            Đánh giá
+          </button>
         </div>
         <div className="others-comment">
           <ul>
-            <li className="other-comment-item">
-              <div className="other-comment-info">
-                <img
-                  className="comment-avatar"
-                  src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"
-                  alt="user-avatar"
-                />
-                <div className="other-comment-desc">
-                  <span>Rock Smith</span>
-                  {this.showRating(4.5)}
+            {res.comment.map((item, index) => (
+              <li className="other-comment-item" key={index}>
+                <div className="other-comment-info">
+                  <img
+                    className="comment-avatar"
+                    src={item.avatar}
+                    alt="user-avatar"
+                  />
+                  <div className="other-comment-desc">
+                    <span>{item.username}</span>
+                    {this.showRating(item.rating)}
+                  </div>
                 </div>
-              </div>
-              <p className="comment">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
-              </p>
-            </li>
-            <li className="other-comment-item">
-              <div className="other-comment-info">
-                <img
-                  className="comment-avatar"
-                  src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"
-                  alt="user-avatar"
-                />
-                <div className="other-comment-desc">
-                  <span>Rock Smith</span>
-                  {this.showRating(4.5)}
-                </div>
-              </div>
-              <p className="comment">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
-              </p>
-            </li>
-            <li className="other-comment-item">
-              <div className="other-comment-info">
-                <img
-                  className="comment-avatar"
-                  src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"
-                  alt="user-avatar"
-                />
-                <div className="other-comment-desc">
-                  <span>Rock Smith</span>
-                  {this.showRating(4.5)}
-                </div>
-              </div>
-              <p className="comment">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
-              </p>
-            </li>
+                <p className="comment">{item.comment}</p>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -98,4 +140,10 @@ class CommentBox extends React.Component {
   }
 }
 
-export default CommentBox;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addComment: (id, comment) => dispatch(Actions.addComment(id, comment)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(CommentBox);

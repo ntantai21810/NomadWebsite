@@ -199,3 +199,9 @@
   color: #5c5cc5;
   border-bottom-color: #5c5cc5;
 }
+
+.auth-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
