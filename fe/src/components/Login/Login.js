@@ -37,11 +37,18 @@ class Login extends React.Component {
 
     callAPI(endpoint, "POST", data)
       .then((res) => {
-        let user = {
-          username: res.data.username,
-          avatar: res.data.avatar,
-          email: res.data.email,
-        };
+        console.log(res);
+        let user = match
+          ? {
+              username: res.data.newUser.username,
+              avatar: res.data.newUser.avatar,
+              email: res.data.newUser.email,
+            }
+          : {
+              username: res.data.username,
+              avatar: res.data.avatar,
+              email: res.data.email,
+            };
 
         this.props.setUser(user);
 
@@ -49,11 +56,11 @@ class Login extends React.Component {
           success: true,
         });
       })
-      .catch((err) =>
+      .catch((err) => {
         this.setState({
           message: err.response.data.message,
-        })
-      );
+        });
+      });
   };
 
   render() {
