@@ -11,16 +11,16 @@ class Footer extends React.Component {
           <div className="container footer-top-container">
             <div className="col-4">
               <span className="footer-input-title">
-                Connect with us for update and offers
+                Liện hệ với chúng tôi để biết thêm thông tin
               </span>
               <div className="input-group footer-form">
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Enter your email address"
+                  placeholder="Email của bạn"
                 />
                 <div className="input-group-append">
-                  <span className="input-group-text">Subcribe now</span>
+                  <span className="input-group-text">Liên hệ</span>
                 </div>
               </div>
             </div>
@@ -28,7 +28,7 @@ class Footer extends React.Component {
               <i className="fas fa-globe-asia"></i>
               <select name="languages" className="languages">
                 <option value="English">English</option>
-                <option value="Vietnamese">Vietnamese</option>
+                <option value="Vietnamese">Tiếng việt</option>
               </select>
               <i className="fas fa-sort-down"></i>
             </div>
@@ -39,53 +39,53 @@ class Footer extends React.Component {
             <div>
               <img className="footer-img" src={Logo} alt="nomad-logo" />
               <p className="footer-desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                interdum leo at finibus ornare. Aliquam gravida condimentum
-                neque, vel ultrices purus dignissim a.
+                Nomad giúp bạn dễ dàng hơn trong việc tìm kiếm quán ăn, chúp tôi
+                sẽ giúp bạn tìm kiếm các quán ăn và sẽ hiện thị các đánh giá về
+                quán ăn đó để bạn có thể dễ dàng nhận xét.
               </p>
             </div>
             <div className="footer-about">
-              <h3 className="footer-subtitle">About Nomad</h3>
+              <h3 className="footer-subtitle">Về Nomad</h3>
               <div>
                 <Link className="footer-link" to="/about">
-                  About us
+                  Thông tin về chúng tôi
                 </Link>
                 <Link className="footer-link" to="">
                   Blog
                 </Link>
                 <Link className="footer-link" to="">
-                  Developers
+                  Đội ngũ phát triển
                 </Link>
                 <Link className="footer-link" to="">
-                  Mobile apps
+                  Ứng dụng di động
                 </Link>
                 <Link className="footer-link" to="">
-                  Contact
+                  Liên hệ
                 </Link>
               </div>
             </div>
             <div className="footer-business">
-              <h3 className="footer-subtitle">Business</h3>
+              <h3 className="footer-subtitle">Kinh doanh</h3>
               <div>
                 <Link className="footer-link" to="">
-                  Add a restaurant
+                  Thêm quán ăn
                 </Link>
                 <Link className="footer-link" to="">
-                  Book
+                  Góp ý
                 </Link>
                 <Link className="footer-link" to="">
-                  Advertise
+                  Quảng cáo
                 </Link>
               </div>
             </div>
             <div className="footer-partner">
-              <h3 className="footer-subtitle">Partner With Us</h3>
+              <h3 className="footer-subtitle">Hợp tác</h3>
               <div>
                 <Link className="footer-link" to="">
-                  For Restaurant
+                  Cho quán ăn
                 </Link>
                 <Link className="footer-link" to="">
-                  For Driver
+                  Bên khác
                 </Link>
               </div>
               <div className="footer-social">

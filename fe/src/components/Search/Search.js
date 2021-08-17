@@ -13,14 +13,14 @@ class Search extends React.Component {
           <div className="row">
             <div className="col-md-8  search-left">
               <div>
-                <h2 className="slogan">Choose, Order and Checkout</h2>
+                <h2 className="slogan">Tìm kiếm quán ăn cho bạn</h2>
                 <span className="slogan-desc">
                   Sự thoải mái của bạn là niềm vui của chúng tôi
                 </span>
               </div>
-              <Link to="" className="btn slogan-btn">
-                Go to restaurant
-              </Link>
+              <a href="#res" className="btn slogan-btn">
+                Đi tới quán ăn
+              </a>
             </div>
             <div className="col-md-4 search-right">
               <div className="input-container">
@@ -28,19 +28,19 @@ class Search extends React.Component {
                   <input
                     type="text"
                     className="form-control location"
-                    placeholder="Choose your location"
+                    placeholder="Chọn địa điểm"
                   />
                 </div>
                 <div className="form-group">
                   <input
                     type="text"
                     className="form-control food-type"
-                    placeholder="Choose food type"
+                    placeholder="Chọn loại thức ăn"
                   />
                 </div>
               </div>
               <button type="submit" className="btn btn-primary search-find">
-                Submit
+                Tìm kiếm
               </button>
             </div>
           </div>

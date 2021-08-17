@@ -4,32 +4,32 @@ import "./Progress.css";
 let browse = [
   {
     icon: "fas fa-star favor",
-    title: "Favorite",
+    title: "Được yêu thích",
     to: "#",
   },
   {
     icon: "fas fa-fire trend",
-    title: "Trending",
+    title: "Đang hot",
     to: "#",
   },
   {
     icon: "fas fa-map-marker-alt place",
-    title: "Places",
+    title: "Địa điểm",
     to: "#",
   },
   {
     icon: "fas fa-users user",
-    title: "Users",
+    title: "Phù hợp ",
     to: "#",
   },
   {
     icon: "fas fa-money-bill-wave price",
-    title: "Prices",
+    title: "Giá",
     to: "#",
   },
   {
     icon: "fas fa-smile rating",
-    title: "Rating",
+    title: "Đánh giá",
     to: "#",
   },
 ];
@@ -39,7 +39,7 @@ class Progress extends React.Component {
     return (
       <div className="Browse-Places">
         <div className="container">
-          <h3 className="col col-Browse-Places">Browse Places</h3>
+          <h3 className="col col-Browse-Places">Tìm kiếm theo loại</h3>
           <div className="row-icon">
             {browse.map((item, index) => (
               <div key={index}>

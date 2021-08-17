@@ -7,18 +7,35 @@ class ResItem extends React.Component {
     let result = [];
     let i;
     for (i = 1; i <= rating; i++) {
-      result.push(<i className="fas fa-star restaurant-desc-star"></i>);
+      result.push(
+        <i
+          className="fas fa-star restaurant-desc-star"
+          key={Math.random() ** 2 + this.props.res._id}
+        ></i>
+      );
     }
     if (i - rating !== 1) {
       result.push(
-        <i className="fas fa-star-half-alt restaurant-desc-star"></i>
+        <i
+          className="fas fa-star-half-alt restaurant-desc-star"
+          key={Math.random() ** 2 + this.props.res._id}
+        ></i>
       );
     }
     for (i = 4; i >= rating; i--) {
-      result.push(<i className="far fa-star restaurant-desc-star"></i>);
+      result.push(
+        <i
+          className="far fa-star restaurant-desc-star"
+          key={Math.random() ** 2 + this.props.res._id}
+        ></i>
+      );
     }
 
-    return <div className="restaurant-desc-right">{result}</div>;
+    return (
+      <div className="restaurant-desc-right" key={Math.random()}>
+        {result}
+      </div>
+    );
   };
 
   render() {
@@ -42,7 +59,7 @@ class ResItem extends React.Component {
             to={`/restaurant/${res._id}`}
             className="btn btn-primary res-view"
           >
-            View detail
+            Xem chi tiết
           </Link>
         </div>
       </div>

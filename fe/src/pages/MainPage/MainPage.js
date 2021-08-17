@@ -37,6 +37,9 @@ const mapDispatchToProps = (dispatch) => {
     getAllRes: () => {
       dispatch(Actions.getAllResRequest());
     },
+    calcRating: () => {
+      dispatch(Actions.calcRating());
+    },
   };
 };
 

@@ -12,12 +12,12 @@ class ResContainer extends React.Component {
     let newRes = allRes.filter((item) => item.type === "newres");
 
     return (
-      <div>
-        <h2 className="res-title">Restaurants</h2>
-        <ResList type="Trending" allRes={trendingRes} />
-        <ResList type="Near by" allRes={nearbyRes} />
-        <ResList type="Discount" allRes={discountRes} />
-        <ResList type="New restaurants" allRes={newRes} />
+      <div id="res">
+        <h2 className="res-title">Quán ăn</h2>
+        <ResList type="Đang hot" allRes={trendingRes} />
+        <ResList type="Gần bạn" allRes={nearbyRes} />
+        <ResList type="Đang giảm giá" allRes={discountRes} />
+        <ResList type="Quán ăn mới" allRes={newRes} />
       </div>
     );
   }

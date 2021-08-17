@@ -123,7 +123,10 @@ class Login extends React.Component {
         </form>
 
         {match ? (
-          ""
+          <div className="register" style={{ marginTop: "24px" }}>
+            <span>Đã có tài khoản?</span>
+            <Link to="/login">Đăng nhập ngay</Link>
+          </div>
         ) : (
           <div>
             <span className="seperate">

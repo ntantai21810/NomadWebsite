@@ -9,7 +9,7 @@ class FoodTypeItem extends React.Component {
         <img className="foodtype-img" src={item.img} alt="foodtype" />
         <div className="foodtype-desc">
           <span className="foodtype-type">{item.type}</span>
-          <span className="foodtype-quantity">{item.quantity} restaurants</span>
+          <span className="foodtype-quantity">{item.quantity} quán ăn</span>
         </div>
       </div>
     );

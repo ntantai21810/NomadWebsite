@@ -27,12 +27,12 @@ class Navbar extends React.Component {
           </button>
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav mb-2 mb-lg-0">
-              <CustomLink to="/" exact={true} label="Home" extra="1" />
-              <CustomLink to="/about" exact={false} label="About" />
+              <CustomLink to="/" exact={true} label="Trang chủ" extra="1" />
+              <CustomLink to="/about" exact={false} label="Giới thiệu" />
               <CustomLink
                 to={[...Types.TYPE_URL]}
                 exact={false}
-                label="Restaurants"
+                label="Quán ăn"
               />
             </ul>
 
@@ -40,11 +40,11 @@ class Navbar extends React.Component {
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Tìm kiếm"
                 aria-label="Search"
               />
               <button className="btn btn-outline-success" type="submit">
-                Search
+                Tìm kiếm
               </button>
             </form>
             {this.showProfile(this.props.user)}

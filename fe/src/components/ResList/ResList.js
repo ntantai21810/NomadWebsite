@@ -30,7 +30,7 @@ class ResList extends React.Component {
         <div className="reslist-top">
           <h3 className="reslist-title">{this.props.type}</h3>
           <Link to="/type/trending" className="reslist-link">
-            View all
+            Xem tất cả
           </Link>
         </div>
         <div className="reslist">

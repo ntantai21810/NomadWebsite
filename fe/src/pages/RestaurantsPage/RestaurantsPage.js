@@ -9,11 +9,11 @@ class RestaurantsPage extends React.Component {
     super(props);
     this.state = {
       sidebarItems: [
-        "All",
-        "Trending",
-        "Near by",
-        "Discount",
-        "New restaurant",
+        "Tất cả",
+        "Đang hot",
+        "Gần bạn",
+        "Đang giảm giá",
+        "Nhà hàng mới",
       ],
     };
   }
@@ -23,16 +23,12 @@ class RestaurantsPage extends React.Component {
   }
 
   render() {
-    let allRes = this.props.allRes;
-
-    console.log(allRes);
-
     return (
       <div className="container respage-container">
         <div className="respage-left">
           <Sidebar items={this.state.sidebarItems} />
         </div>
-        <div className="respage-right"></div>
+        <div className="respage-right">Coming soon</div>
       </div>
     );
   }

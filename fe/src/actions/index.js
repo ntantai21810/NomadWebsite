@@ -22,3 +22,17 @@ export const getAllResRequest = () => {
       .catch((err) => console.log(err));
   };
 };
+
+export const addComment = (id, comment) => {
+  return {
+    type: Types.ADD_COMMENT_RESTAURANT,
+    id,
+    comment,
+  };
+};
+
+export const calcRating = () => {
+  return {
+    type: Types.CALC_RATING,
+  };
+};

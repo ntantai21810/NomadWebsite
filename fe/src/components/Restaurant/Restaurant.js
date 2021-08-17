@@ -19,22 +19,33 @@ class Restaurant extends React.Component {
     let result = [];
     let i;
     for (i = 1; i <= rating; i++) {
-      result.push(<i className="fas fa-star restaurant-desc-star" key={i}></i>);
+      result.push(
+        <i className="fas fa-star restaurant-desc-star" key={Math.random()}></i>
+      );
     }
     if (i - rating !== 1) {
       result.push(
-        <i className="fas fa-star-half-alt restaurant-desc-star" key={0}></i>
+        <i
+          className="fas fa-star-half-alt restaurant-desc-star"
+          key={Math.random()}
+        ></i>
       );
     }
     for (i = 4; i >= rating; i--) {
-      result.push(<i className="far fa-star restaurant-desc-star" key={i}></i>);
+      result.push(
+        <i className="far fa-star restaurant-desc-star" key={Math.random()}></i>
+      );
     }
     result.push(
-      <span className="restaurant-desc-rating" key={5}>
+      <span className="restaurant-desc-rating" key={Math.random()}>
         {rating}/5
       </span>
     );
-    return <div className="restaurant-desc-right">{result}</div>;
+    return (
+      <div className="restaurant-desc-right" key={Math.random()}>
+        {result}
+      </div>
+    );
   };
 
   handleClick = (index) => {
@@ -66,7 +77,7 @@ class Restaurant extends React.Component {
                   key={index}
                   onClick={() => this.handleClick(index)}
                 >
-                  <img src={item} alt="restaurant-food" />
+                  <img src={item} alt="restaurant-food" key={index} />
                 </li>
               ))}
             </ul>
@@ -86,7 +97,7 @@ class Restaurant extends React.Component {
           </div>
           <div className="restaurant-right">
             <h3 className="restaurant-desc-name">{res.name}</h3>
-            <span className="restaurant-desc-subtitle">Description</span>
+            <span className="restaurant-desc-subtitle">Mô tả</span>
             <p>{res.descriptionRestaurant}</p>
 
             <span className="restaurant-price">
@@ -109,16 +120,16 @@ class Restaurant extends React.Component {
             </ul>
 
             <div className="restaurant-desc-time">
-              <i className="far fa-clock restaurant-desc-time-icon"></i>Mo cua:
+              <i className="far fa-clock restaurant-desc-time-icon"></i>Mở cửa:
               <span className="open-time">{res.openTime}</span>
             </div>
             <div className="restaurant-desc-member">
               <i className="far fa-calendar-alt restaurant-desc-time-icon"></i>
-              Member since {res.member}
+              Thành viên từ {res.member}
             </div>
           </div>
         </div>
-        <CommentBox user={this.props.user} comment={res.comment} />
+        <CommentBox user={this.props.user} res={res} />
       </div>
     );
   }
