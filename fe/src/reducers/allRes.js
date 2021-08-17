@@ -21,9 +21,13 @@ let reducer = (state = initState, action) => {
       for (let item of newRes) {
         if (item._id === action.id) {
           item.comment.push(action.comment);
+          item.rating =
+            item.comment.reduce((acc, cur) => acc + Number(cur.rating), 0) /
+            item.comment.length;
           return [...newRes];
         }
       }
+
       return [...newRes];
     default:
       return state;

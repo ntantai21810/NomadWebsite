@@ -1,7 +1,6 @@
 import React from "react";
 import "./Search.css";
 import Carousel from "../Carousel/Carousel";
-import { Link } from "react-router-dom";
 
 class Search extends React.Component {
   render() {
