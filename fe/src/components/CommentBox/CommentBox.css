@@ -21,14 +21,24 @@
   object-position: center;
 }
 
-.your-comment {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.your-comment-container {
   padding: 16px;
   border: 1px solid rgb(194, 194, 194);
   margin-bottom: 24px;
   border-radius: 4px;
+}
+
+.your-comment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.comment-message {
+  display: block;
+  margin-top: 12px;
+  color: red;
+  font-size: 14px;
 }
 
 .comment-container {
