@@ -1,6 +1,7 @@
 import * as Types from "../constants/index";
 
-let initState = [];
+let allRes = localStorage.getItem("allRes");
+let initState = allRes ? JSON.parse(allRes) : [];
 
 let reducer = (state = initState, action) => {
   let newRes = [];

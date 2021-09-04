@@ -10,12 +10,14 @@ class CommentBox extends React.Component {
     this.state = {
       comment: "",
       star: "",
+      message: "",
     };
   }
 
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+      message: "",
     });
   };
 
@@ -51,7 +53,28 @@ class CommentBox extends React.Component {
     let user = this.props.user;
     let { comment, star } = this.state;
 
-    if (Object.keys(user).length === 0 || comment === "" || star === "") return;
+    if (Object.keys(user).length === 0) {
+      this.setState({
+        message: "You must login to comment",
+      });
+      return;
+    }
+
+    if (comment === "" || star === "") {
+      this.setState({
+        message: "Please comment before rating",
+      });
+      return;
+    }
+
+    if (star <= 0 || star > 5) {
+      this.setState({
+        message: "Star must from 1 to 5",
+        comment: "",
+        star: "",
+      });
+      return;
+    }
 
     callAPI(`posts/${this.props.res._id}`, "PUT", {
       avatar: user.avatar,
@@ -80,40 +103,47 @@ class CommentBox extends React.Component {
         <div className="comment-box-title-container">
           <h3 className="comment-box-title">{res.comment.length} Bình luận</h3>
         </div>
-        <div className="your-comment">
-          <img
-            className="comment-avatar"
-            src={
-              Object.keys(user).length !== 0
-                ? user.avatar
-                : "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"
-            }
-            alt="user-avatar"
-          />
-          <div className="comment-container">
-            <input
-              className="type-box"
-              type="text"
-              placeholder="Viết đánh giá của bạn"
-              value={this.state.comment}
-              name="comment"
-              onChange={this.handleChange}
+        <div className="your-comment-container">
+          <div className="your-comment">
+            <img
+              className="comment-avatar"
+              src={
+                Object.keys(user).length !== 0
+                  ? user.avatar
+                  : "https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"
+              }
+              alt="user-avatar"
             />
-            <input
-              className="star-box"
-              type="number"
-              min="0"
-              max="5"
-              value={this.state.star}
-              name="star"
-              onChange={this.handleChange}
-            />
-            <i className="fas fa-star comment-star"></i>
-          </div>
+            <div className="comment-container">
+              <input
+                className="type-box"
+                type="text"
+                placeholder="Viết đánh giá của bạn"
+                value={this.state.comment}
+                name="comment"
+                onChange={this.handleChange}
+              />
+              <input
+                className="star-box"
+                type="number"
+                min="0"
+                max="5"
+                value={this.state.star}
+                name="star"
+                onChange={this.handleChange}
+              />
+              <i className="fas fa-star comment-star"></i>
+            </div>
 
-          <button className="post-comment-btn" onClick={this.submitComment}>
-            Đánh giá
-          </button>
+            <button className="post-comment-btn" onClick={this.submitComment}>
+              Đánh giá
+            </button>
+          </div>
+          {this.state.message ? (
+            <span className="comment-message">{this.state.message}</span>
+          ) : (
+            ""
+          )}
         </div>
         <div className="others-comment">
           <ul>
