@@ -53,7 +53,19 @@ class CommentBox extends React.Component {
     let user = this.props.user;
     let { comment, star } = this.state;
 
-    if (Object.keys(user).length === 0 || comment === "" || star === "") return;
+    if (Object.keys(user).length === 0) {
+      this.setState({
+        message: "You must login to comment",
+      });
+      return;
+    }
+
+    if (comment === "" || star === "") {
+      this.setState({
+        message: "Please comment before rating",
+      });
+      return;
+    }
 
     if (star <= 0 || star > 5) {
       this.setState({
