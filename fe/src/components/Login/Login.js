@@ -25,8 +25,14 @@ class Login extends React.Component {
     });
   };
 
+  validateEmail = (email) => {
+    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
   handelSubmit = (e) => {
     e.preventDefault();
+
     let { match } = this.props;
     let { email, password } = this.state;
     let re_password = this.state.re_passowrd;
@@ -35,9 +41,15 @@ class Login extends React.Component {
       ? { email, password, repassword: re_password }
       : { email, password };
 
+    if (!this.validateEmail(email)) {
+      this.setState({
+        message: "Email is not valid",
+      });
+      return;
+    }
+
     callAPI(endpoint, "POST", data)
       .then((res) => {
-        console.log(res);
         let user = match
           ? {
               username: res.data.newUser.username,
